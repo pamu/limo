@@ -1,5 +1,7 @@
 package ws.empirelimo;
 
+import backgroundTasks.LoginAsyncTask;
+import backgroundTasks.SignupAsyncTask;
 import utils.ConnectionDetector;
 import utils.Constants;
 import utils.Global;
@@ -66,6 +68,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View view) {
+		/**
 		if (view == buttonLogin) {
 			if (editEmailAdd.getText().toString().length() != 0) {
 				if (Patterns.EMAIL_ADDRESS.matcher(
@@ -93,5 +96,29 @@ public class LoginActivity extends Activity implements OnClickListener {
 			Toast.makeText(context, "Create Account", Toast.LENGTH_SHORT)
 					.show();
 		}
+		**/
+
+		String email = editEmailAdd.getText().toString().trim();
+		String password = editPassword.getText().toString().trim();
+		if (email.length() == 0) {
+			showToast("Email must not be empty", getApplicationContext());
+			return;
+		}
+		if (password.length() == 0) {
+			showToast("Password must not be empty", getApplicationContext());
+			return;
+		}
+
+		if (view == buttonCreateAcc) {
+			new SignupAsyncTask(getApplicationContext()).execute(new String[]{email, password});
+		}
+
+		if (view == buttonLogin) {
+			new LoginAsyncTask(getApplicationContext()).execute(new String[]{email, password});
+		}
+	}
+
+	public void showToast(String msg, Context mContext) {
+		Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
 	}
 }

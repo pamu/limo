@@ -44,7 +44,6 @@
             android:paddingEnd="20dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingStart="20dp"
             android:paddingTop="8dp"
             android:singleLine="true" />
 
@@ -55,7 +54,7 @@
             android:layout_below="@+id/editEmail"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            android:visibility="gone" >
+            android:visibility="visible" >
 
             <EditText
                 android:id="@+id/editPassword"
@@ -68,7 +67,7 @@
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:paddingStart="20dp"
+
                 android:paddingTop="8dp"
                 android:password="true"
                 android:singleLine="true"
@@ -98,7 +97,6 @@
             android:paddingEnd="40dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:paddingStart="40dp"
             android:paddingTop="10dp"
             android:text="Login"
             android:textColor="@android:color/black" />
@@ -111,7 +109,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:visibility="gone" >
+            android:visibility="visible" >
 
             <View
                 android:layout_width="match_parent"
@@ -125,7 +123,6 @@
                 android:paddingEnd="4dp"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
-                android:paddingStart="4dp"
                 android:text="or"
                 android:textStyle="bold" />
 
@@ -150,7 +147,7 @@
             android:paddingTop="10dp"
             android:text="Create New Account"
             android:textColor="@android:color/black"
-            android:visibility="gone" />
+            android:visibility="visible" />
     </RelativeLayout>
 
 </ScrollView>
